@@ -375,4 +375,6 @@
    <!-- Enable system navigation keys. -->
    <bool name="config_supportSystemNavigationKeys">true</bool>
 
+   <!-- Config determines whether the device should show a navigation bar as default or not -->
+   <bool name="config_defaultToNavigationBar">true</bool>
 </resources>
