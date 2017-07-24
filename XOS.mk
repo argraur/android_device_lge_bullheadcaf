@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Inherit default bullhead configuration
-$(call inherit-product, device/lge/bullhead/aosp_bullhead.mk)
+$(call inherit-product, device/lge/bullhead/full_bullhead.mk)
 
 # Inherit some common XOS stuff.
 $(call inherit-product, vendor/xos/config/common.mk)
