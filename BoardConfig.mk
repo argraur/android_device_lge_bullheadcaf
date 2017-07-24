@@ -50,6 +50,14 @@ BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 msm_poweroff.download_mode=0
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
+# SnapdragonClang
+TARGET_USES_SDCLANG := true
+LOCAL_SDCLANG := true
+LOCAL_SDCLANG_LTO := true
+SDCLANG := true
+SDCLANG_PATH := prebuilts/clang/linux-x86/host/sdclang-3.8
+SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
+
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
