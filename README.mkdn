@@ -1,0 +1,35 @@
+<img src="https://raw.githubusercontent.com/halogenOS/android_manifest/XOS-7.1/halogenos-logo.png">
+
+___________________________________________________________________________________
+
+
+### Nexus 5X device tree
+
+__Cloning__
+
+```bash
+git clone https://github.com/argraur/device/lge/bullhead -b XOS-7.1 device/lge/bullhead
+```
+
+__Cloning kernel repo__
+
+```bash
+git clone https://android.googlesource.com/kernel/msm -b android-msm-bullhead-3.10-nougat-mr2 kernel/lge/bullhead
+```
+
+__Cloning vendor repo__
+
+```bash
+git clone https://github.com/TheMuppets/proprietary_vendor_lge -b cm-14.1 vendor/lge
+```
+
+__Building for Nexus 5X__
+
+To build Nexus 5X, needs some magic:
+
+```bash
+build full XOS_bullhead-userdebug
+```
+
+
+
