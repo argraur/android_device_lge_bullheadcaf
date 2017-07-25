@@ -48,7 +48,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
 
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=bullhead boot_cpus=0-5
-BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 msm_poweroff.download_mode=0
+BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 msm_poweroff.download_mode=0 androidboot.selinux=permissive
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
@@ -66,7 +66,7 @@ AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := true
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/bullhead/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/bullheadcaf/bluetooth
 BOARD_HAS_QCA_BT_ROME := true
 WCNSS_FILTER_USES_SIBS := true
 
@@ -87,10 +87,10 @@ BOARD_USES_SECURE_SERVICES := true
 TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := msm8992
 TARGET_BOOTLOADER_BOARD_NAME := bullhead
-TARGET_BOARD_INFO_FILE := device/lge/bullhead/board-info.txt
+TARGET_BOARD_INFO_FILE := device/lge/bullheadcaf/board-info.txt
 TARGET_NO_RPC := true
 
-BOARD_EGL_CFG := device/lge/bullhead/egl/egl.cfg
+BOARD_EGL_CFG := device/lge/bullheadcaf/egl/egl.cfg
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
@@ -138,9 +138,9 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.bullhead
 
-TARGET_RECOVERY_FSTAB = device/lge/bullhead/rootdir/etc/fstab.bullhead
+TARGET_RECOVERY_FSTAB = device/lge/bullheadcaf/rootdir/etc/fstab.bullhead
 
-TARGET_RELEASETOOLS_EXTENSIONS := device/lge/bullhead
+TARGET_RELEASETOOLS_EXTENSIONS := device/lge/bullheadcaf
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
@@ -148,7 +148,7 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 
 BOARD_SEPOLICY_DIRS += \
-    device/lge/bullhead/sepolicy
+    device/lge/bullheadcaf/sepolicy
 
 TARGET_USES_64_BIT_BINDER := true
 
