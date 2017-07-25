@@ -90,7 +90,7 @@ TARGET_BOOTLOADER_BOARD_NAME := bullhead
 TARGET_BOARD_INFO_FILE := device/lge/bullhead/board-info.txt
 TARGET_NO_RPC := true
 
-BOARD_EGL_CFG := device/lge/bullhead/egl.cfg
+BOARD_EGL_CFG := device/lge/bullhead/egl/egl.cfg
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
@@ -138,7 +138,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.bullhead
 
-TARGET_RECOVERY_FSTAB = device/lge/bullhead/fstab.bullhead
+TARGET_RECOVERY_FSTAB = device/lge/bullhead/rootdir/etc/fstab.bullhead
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/lge/bullhead
 

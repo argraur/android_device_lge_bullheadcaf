@@ -23,37 +23,37 @@
 TARGET_USES_CHINOOK_SENSORHUB := false
 
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.rc:root/init.bullhead.rc \
-    device/lge/bullhead/init.bullhead.usb.rc:root/init.bullhead.usb.rc \
-    device/lge/bullhead/fstab.bullhead:root/fstab.bullhead \
-    device/lge/bullhead/ueventd.bullhead.rc:root/ueventd.bullhead.rc \
-    device/lge/bullhead/init.recovery.bullhead.rc:root/init.recovery.bullhead.rc \
-    device/lge/bullhead/init.bullhead.ramdump.rc:root/init.bullhead.ramdump.rc \
-    device/lge/bullhead/init.bullhead.fp.rc:root/init.bullhead.fp.rc
+    device/lge/bullhead/rootdir/etc/init.bullhead.rc:root/init.bullhead.rc \
+    device/lge/bullhead/rootdir/etc/init.bullhead.usb.rc:root/init.bullhead.usb.rc \
+    device/lge/bullhead/rootdir/etc/fstab.bullhead:root/fstab.bullhead \
+    device/lge/bullhead/rootdir/etc/ueventd.bullhead.rc:root/ueventd.bullhead.rc \
+    device/lge/bullhead/rootdir/etc/init.recovery.bullhead.rc:root/init.recovery.bullhead.rc \
+    device/lge/bullhead/rootdir/etc/init.bullhead.ramdump.rc:root/init.bullhead.ramdump.rc \
+    device/lge/bullhead/rootdir/etc/init.bullhead.fp.rc:root/init.bullhead.fp.rc
 
 ifeq ($(TARGET_USES_CHINOOK_SENSORHUB),true)
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.sensorhub.rc:root/init.bullhead.sensorhub.rc
+    device/lge/bullhead/rootdir/etc/init.bullhead.sensorhub.rc:root/init.bullhead.sensorhub.rc
 else
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.nanohub.rc:root/init.bullhead.sensorhub.rc
+    device/lge/bullhead/rootdir/etc/init.bullhead.nanohub.rc:root/init.bullhead.sensorhub.rc
 endif
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    device/lge/bullhead/media_codecs.xml:system/etc/media_codecs.xml \
-    device/lge/bullhead/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    device/lge/bullhead/media_profiles.xml:system/etc/media_profiles.xml
+    device/lge/bullhead/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    device/lge/bullhead/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    device/lge/bullhead/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # Audio
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/audio_effects.conf:system/etc/audio_effects.conf \
-    device/lge/bullhead/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/lge/bullhead/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    device/lge/bullhead/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
-    device/lge/bullhead/audio_policy_volumes_drc.xml:system/etc/audio_policy_volumes_drc.xml \
+    device/lge/bullhead/audio/audio_effects.conf:system/etc/audio_effects.conf \
+    device/lge/bullhead/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
+    device/lge/bullhead/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    device/lge/bullhead/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
+    device/lge/bullhead/audio/audio_policy_volumes_drc.xml:system/etc/audio_policy_volumes_drc.xml \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:system/etc/a2dp_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml \
@@ -61,14 +61,14 @@ PRODUCT_COPY_FILES += \
 
 #Sound Trigger
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    device/lge/bullhead/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml
+    device/lge/bullhead/audio/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
+    device/lge/bullhead/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml
 
 # Input device files
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    device/lge/bullhead/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl \
-    device/lge/bullhead/uinput-fpc.kl:system/usr/keylayout/uinput-fpc.kl
+    device/lge/bullhead/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    device/lge/bullhead/keylayout/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl \
+    device/lge/bullhead/keylayout/uinput-fpc.kl:system/usr/keylayout/uinput-fpc.kl
 
 # for launcher layout
 PRODUCT_PACKAGES += \
@@ -76,7 +76,7 @@ PRODUCT_PACKAGES += \
 
 # Prebuilt input device calibration files
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/synaptics_rmi4_i2c.idc:system/usr/idc/synaptics_rmi4_i2c.idc
+    device/lge/bullhead/configs/synaptics_rmi4_i2c.idc:system/usr/idc/synaptics_rmi4_i2c.idc
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -118,11 +118,11 @@ PRODUCT_COPY_FILES += \
 
 # For SPN display
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/spn-conf.xml:system/etc/spn-conf.xml
+    device/lge/bullhead/configs/spn-conf.xml:system/etc/spn-conf.xml
 
 # For GPS
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/sec_config:system/etc/sec_config
+    device/lge/bullhead/gps/sec_config:system/etc/sec_config
 
 # NFC config files
 PRODUCT_COPY_FILES += \
@@ -138,19 +138,19 @@ PRODUCT_COPY_FILES += \
 
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/msm_irqbalance.conf:vendor/etc/msm_irqbalance.conf
+    device/lge/bullhead/configs/msm_irqbalance.conf:vendor/etc/msm_irqbalance.conf
 
 # Power configuration file
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.power.sh:system/bin/init.bullhead.power.sh
+    device/lge/bullhead/rootdir/etc/init.bullhead.power.sh:system/bin/init.bullhead.power.sh
 
 # MBN
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.sh:system/bin/init.bullhead.sh
+    device/lge/bullhead/rootdir/etc/init.bullhead.sh:system/bin/init.bullhead.sh
 
 # Qseecomd configuration file
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.qseecomd.sh:system/bin/init.bullhead.qseecomd.sh
+    device/lge/bullhead/rootdir/etc/init.bullhead.qseecomd.sh:system/bin/init.bullhead.qseecomd.sh
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
@@ -204,7 +204,7 @@ PRODUCT_PACKAGES += \
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/gps.conf:system/etc/gps.conf
+    device/lge/bullhead/gps/gps.conf:system/etc/gps.conf
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -453,12 +453,12 @@ PRODUCT_PACKAGES += \
 endif # aosp_bullhead
 
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.diag.rc.userdebug:root/init.bullhead.diag.rc \
-    device/lge/bullhead/init.bullhead.misc.rc.userdebug:root/init.bullhead.misc.rc
+    device/lge/bullhead/rootdir/etc/init.bullhead.diag.rc.userdebug:root/init.bullhead.diag.rc \
+    device/lge/bullhead/rootdir/etc/init.bullhead.misc.rc.userdebug:root/init.bullhead.misc.rc
 else
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.diag.rc.user:root/init.bullhead.diag.rc \
-    device/lge/bullhead/init.bullhead.misc.rc.user:root/init.bullhead.misc.rc
+    device/lge/bullhead/rootdir/etc/init.bullhead.diag.rc.user:root/init.bullhead.diag.rc \
+    device/lge/bullhead/rootdir/etc/init.bullhead.misc.rc.user:root/init.bullhead.misc.rc
 endif
 
 # setup dm-verity configs.
