@@ -66,6 +66,9 @@ BOARD_SUPPORTS_SOUND_TRIGGER := true
 AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := true
 BOARD_AUDIO_HAL_PATH := device/lge/bullheadcaf/audio-caf
 
+# Media HAL
+BOARD_MEDIA_HAL_PATH := device/lge/bullheadcaf/media-caf
+
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/bullheadcaf/bluetooth
